@@ -1,4 +1,4 @@
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class Main {
     public static void firstTask() {
@@ -45,48 +45,22 @@ public class Main {
         }
     }
 
-    public static void eighthTask() {
-        Vector<String> month = new Vector<>();
-        month.add("Январь");
-        month.add("Февраль");
-        month.add("Март");
-        month.add("Апрель");
-        month.add("Май");
-        month.add("Июнь");
-        month.add("Июль");
-        month.add("Август");
-        month.add("Сентябрь");
-        month.add("Октябрь");
-        month.add("Ноябрь");
-        month.add("Декабрь");
+    public static void eighthTask(ArrayList<String> month) {
         int tmp = 0;
-        for (int i = 0; i < 12; i++) {
+        for (String m : month) {
             tmp += 29000;
-            System.out.println(month.get(i) + ", сумма накоплений равна " + tmp + " рублей");
+            System.out.println(m + ", сумма накоплений равна " + tmp + " рублей");
         }
     }
 
-    public static void ninethTask() {
-        Vector<String> month = new Vector<>();
-        month.add("Январь");
-        month.add("Февраль");
-        month.add("Март");
-        month.add("Апрель");
-        month.add("Май");
-        month.add("Июнь");
-        month.add("Июль");
-        month.add("Август");
-        month.add("Сентябрь");
-        month.add("Октябрь");
-        month.add("Ноябрь");
-        month.add("Декабрь");
+    public static void ninethTask(ArrayList<String> month) {
         float tmp = 0;
         float perYear = 12;//можно менять, программа адаптируется, под другой годовой процент
         float perMonth = ((perYear / 12) / 100) + 1;
-        for (int i = 0; i < 12; i++) {
+        for (String m : month) {
             tmp *= perMonth;
             tmp += 29000;
-            System.out.println(month.get(i) + ", сумма накоплений равна " + tmp + " рублей");
+            System.out.println(m + ", сумма накоплений равна " + tmp + " рублей");
         }
     }
 
@@ -111,10 +85,25 @@ public class Main {
         sixthTask();
         System.out.println("\nЗадание 7");
         seventhTask();
+
+        ArrayList<String> month = new ArrayList<>();
+        month.add("Январь");
+        month.add("Февраль");
+        month.add("Март");
+        month.add("Апрель");
+        month.add("Май");
+        month.add("Июнь");
+        month.add("Июль");
+        month.add("Август");
+        month.add("Сентябрь");
+        month.add("Октябрь");
+        month.add("Ноябрь");
+        month.add("Декабрь");
+
         System.out.println("\nЗадание 8");
-        eighthTask();
+        eighthTask(month);
         System.out.println("\nЗадание 9");
-        ninethTask();
+        ninethTask(month);
         System.out.println("\nЗадание 10");
         tenthTask();
     }
